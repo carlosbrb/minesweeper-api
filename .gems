@@ -1,0 +1,7 @@
+cuba -v 3.9.0
+cutest -v 1.2.3
+mongo -v 2.5.1
+mongoid -v 6.3.0
+rack-test -v 0.6.3
+rubocop -v 0.53.0
+shotgun -v 0.9.2
