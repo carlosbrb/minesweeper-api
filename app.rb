@@ -24,12 +24,19 @@ Cuba.define do
       res.redirect '/games'
     end
   end
+
   on post do
-    on 'game/:cols/:rows/:mines' do |cols, rows, mines|
+    on 'game', param('rows'), param('cols'), param('mines') do |rows, cols, mines|
       game = Game.create(state: 'new',
                          mines: mines,
                          cols: cols,
                          rows: rows)
+      res.write game.to_json
+    end
+
+    on 'game/:id/flag', param('row'), param('col') do |id, row, col|
+      game = Game.find(id)
+      game.flag(row.to_i, col.to_i)
       res.write game.to_json
     end
   end

@@ -4,3 +4,9 @@ development:
       database: mines
       hosts:
         - localhost:27017
+test:
+  clients:
+    default:
+      database: mines_test
+      hosts:
+        - localhost:27017
